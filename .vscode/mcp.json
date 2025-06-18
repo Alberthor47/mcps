@@ -2,12 +2,24 @@
     "inputs": [
         {
             "type": "promptString"
+        },
+        {
+            "id": "mongodb_connection_string",
+            "type": "promptString",
+            "description": "mongodb://admin:password123@localhost:27017/testdb?authSource=admin"
         }
     ],
     "servers": {
         "fetch": {
             "command": "uvx",
             "args": ["mcp-server-fetch"]
+        },
+        "mongodb": {
+            "command": "npx",
+            "args": ["-y", "mongodb-mcp-server"],
+            "env": {
+                "MDB_MCP_CONNECTION_STRING": "${input:mongodb_connection_string}"
+            }
         }
     }
 }

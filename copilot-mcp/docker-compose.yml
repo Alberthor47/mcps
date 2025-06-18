@@ -1,0 +1,18 @@
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb-mcp-test
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: testdb
+    volumes:
+      - mongodb_data:/data/db
+      - ./users.csv:/docker-entrypoint-initdb.d/users.csv:ro
+      - ./import-csv.sh:/docker-entrypoint-initdb.d/import-csv.sh:ro
+
+volumes:
+  mongodb_data:
