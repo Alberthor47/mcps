@@ -16,7 +16,7 @@ MongoDB Database (Docker)
 Marvel Characters Data
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 You can quickly set up this project using Docker and Docker Compose. The following steps will guide you through the process of running a MongoDB instance with pre-populated Marvel character data, ready for AI interactions.
 
@@ -55,7 +55,7 @@ Once configured, AI assistants can interact with the database using natural lang
 - *"What are the different universes in the database?"*
 - *"Count how many characters are alive"*
 
-##  Management Commands
+## Management Commands
 
 ### Start Services
 
